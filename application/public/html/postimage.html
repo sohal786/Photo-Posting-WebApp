@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PostImage</title>
-    <h1> My Website</h1>
+    <link href = "../css/style.css" rel="stylesheet" type="text/css" />
+    <div class="heading"><h1>My website </h1></div>
 </head>
-<body>
+<body >
     <header>
         <nav>
         <ul>
@@ -18,31 +19,36 @@
         <li><a href="viewpost.html">ViewPost</a></li>
     </ul>
     </nav>
-
-<h2> Image Post Form</h2>
+<div class="imageform" >
+<div class="title"<h2> Image Post Form</h2></div>
     <form action="">
-        <fieldset>     
-            <legend>FORM</legend>  
-             <legend>Enter the post title:</legend>
+            
+           
+         <div class="item"    <legend>Enter the post title:</legend></div>
             <label for="title"> TITLE </label>
          <input type=" text" id="title" >
-         <legend>Enter the post description:</legend>
+        <div class="item" <legend>Enter the post description:</legend></div>
          <label for="description"> DESCRIPTION</label>
            <input type="text" id = "description">
-           <legend>Post the image:</legend>
+          <div class="item" <legend>Post the image:</legend></div>
            <label for="image"> </label>
            <input type="file" id="image">
            
-           <legend>Please read and accept the <a href="">Policy for uploading Images</a>  before posting:</legend>
-           <button>Accept</button>
-           <button>Not Accept</button>
+         <div class="item"  <legend>Please read and accept the <a href="">Policy for uploading Images</a>  before posting:</legend></div>
+           <input type="checkbox">Accept</input>
+           
            <br> </br>    
-        </fieldset>
-
+        
 
        <input type="submit">
     </form>
-    
+</div>
+<footer class ="footer">
+
+    <p>*This website is made by Akshat Sohal*</p>
+
+
+</footer>
 </body>
 </html>
 
