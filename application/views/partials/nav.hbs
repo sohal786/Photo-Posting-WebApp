@@ -1,0 +1,41 @@
+{{log this}}
+
+<nav class="navbar">
+            <div class="left">
+            <a href="/" class="items">Home</a>
+        </div>
+                <form class="search-bar" action="/posts/search"
+                enctype="application/x-www-form-urlencoded"
+                method="GET">
+             
+                
+                <input type="text" name="searchTerm" placeholder="search" id="" value="{{searchValue}}">
+                
+                <button class="fas fa-search" type="submit"   area-hidden="true">
+                    
+                
+                
+                </button>
+              
+            </form>
+             {{#if isLoggedIn}}
+              <div class="right">
+                <a class="items">Hi, {{username}}</a>
+                <a class="items" href="/logout" id="logout-button">Log Out</a>
+                 <a href="/postimage" class="items">PostImage</a>
+            {{else}}
+            <div class="right">
+        <a class="items" href="/login">Login</a>
+        <a href="/register" class="items">Registration</a>
+         <a href="/postimage" class="items">PostImage</a>
+        {{/if}}
+        
+    
+        
+       
+    </div>
+         
+              
+    </nav>
+
+    

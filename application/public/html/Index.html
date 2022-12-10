@@ -6,28 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <header>
+<<<<<<< Updated upstream
        <link href = "../css/style.css" rel="stylesheet" type="text/css" />
+=======
+        <script defer 
+        src="../js/fetch.js"></script>  
+       <link href = "../css/style.css" rel="stylesheet" type="text/css" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+>>>>>>> Stashed changes
        <div class="heading"> <h1>Welcome to my Website </h1></div>
        
     </header>
 </head>
 <body>
-    <header><nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="registration.html">Registration</a></li>
-        <li><a href="postimage.html">PostImage</a></li>
-        <li><a href="viewpost.html">ViewPost</a></li>
-    </ul>
+    <header><nav class="navbar">
+       
+        
+            <div class="left">
+            <a href="index.html" class="items">Home</a>
+        </div>
+                <form class="search" action="/posts/search"
+                enctype="application/x-www-form-urlencoded"
+                method="GET">
+             
+                
+                <input type="search" name="searchTerm" placeholder="search" id="" value="">
+                
+                <button class="fas fa-search" type="submit"   area-hidden="true">
+                    
+                
+                
+                </button>
+              
+            </form>
+              <div class="right">
+        <a href="login.html" class="items">Login</a>
+        <a href="registration.html" class="items">Registration</a>
+       
+   
+        
+        <!-- <li>
+         <button type="submit" class="fas fa-search"></button>
+        </li> -->
+        
+        <a href="postimage.html" class="items">PostImage</a>
+    </div>
+         
+              
     </nav>
 </header>
     
 
     <h1>This is heading</h1>
+<<<<<<< Updated upstream
     <main class="main"> <p>this is a paragraph</p>
         
     </main>
+=======
+    
+    <div id="photosList" class="photosList">
+
+    </div>
+    <div id="counter" class ="counter">The value is:</div>
+>>>>>>> Stashed changes
    
     <footer class ="footer">
 
@@ -37,3 +79,5 @@
     </footer>
 </body>
 </html>
+
+

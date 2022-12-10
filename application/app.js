@@ -7,7 +7,12 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+<<<<<<< Updated upstream
 
+=======
+const postsRouter = require("./routes/posts");
+const commentsRouter = require("./routes/comments");
+>>>>>>> Stashed changes
 const app = express();
 
 app.engine(
@@ -17,7 +22,24 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
+<<<<<<< Updated upstream
     helpers: {}, //adding new helpers to handlebars for extra functionality
+=======
+    helpers: {
+
+      nonEmptyObject: function(obj){
+        return !(obj && obj.contructor === Object && Object.keys(obj).length == 0);
+      },
+     //adding new helpers to handlebars for extra functionality
+      formatDate: function(dateString){
+        return new Date(dateString).toLocaleString("en-US", {
+          timeStyle: "long",
+          dateStyle: "long"
+        });
+      }
+    },
+
+>>>>>>> Stashed changes
   })
 );
 
@@ -36,7 +58,12 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
+<<<<<<< Updated upstream
 
+=======
+app.use("/posts", postsRouter);
+app.use("/comments", commentsRouter);
+>>>>>>> Stashed changes
 
 /**
  * Catch all route, if we get to here then the 

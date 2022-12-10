@@ -10,18 +10,19 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+| Student Name  | akshat sohal    |
+| Student ID    | 917815046      |
+| Student Email | asohal@mail.sfsu.edu   |
 
 
 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. open the terminal at application folder
+2. command: npm install 
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. npm run build db
+2. use command npm start to start express
+    -use command: npm run buildb to build data base...

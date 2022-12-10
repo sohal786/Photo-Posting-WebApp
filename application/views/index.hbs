@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Hello {{ name }},Welcome to {{title}}</p>
+
+{{log this}}
+    <div class="form-container">
+
+    {{!-- <h1>This is heading</h1> --}}
+    
+    <div id="photosList" class="photosList">
+        
+        {{#each results}}
+
+            <div class="cards">
+                <img class="post-image" src="/{{this.thumbnail}}" alt="">
+                <p class="post-title">{{this.title}}</p>
+                <p class="post-title">{{this.description}}</p>
+                <a class ="details-link" href="/posts/{{this.id}}">Details</a>
+            </div>
+            {{/each}}
+    </div>
+    
+   
