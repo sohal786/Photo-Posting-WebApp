@@ -12,15 +12,15 @@ router.get("/",  getRecentPosts, function(req, res, next) {
 
 
 router.get("/login", function(req, res) {
-  res.render('login', {css:["style.css"], js:["loginValidation.js"]});
+  res.render('login', {css:["style.css"],js:["loginValidation.js"]});
 });
  //would use more like unique user name, email...
 // router.use("/register", function(req, res, next){
 
 //   if (`user info is valid`){
-//     next()
+//     next(), js:["loginValidation.js"]
 //   }
-//   else{
+//   else{js:["loginValidation.js"]
 
 //     res.json({message: `user info invalid`})
 //   }

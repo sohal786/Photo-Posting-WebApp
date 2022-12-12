@@ -4,14 +4,12 @@
     <title>{{title}}</title>
     <script defer src="/public/js/flashmessage.js"></script>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
-<<<<<<< Updated upstream
     <link rel='stylesheet' href='/public/css/style.css' />
-  </head>
-  <body>
-=======
+  
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel='stylesheet' href="/public/css/style.css"/>
+     
      {{#each css}}
       <link rel='stylesheet' href="/public/css/{{this}}"/>
       {{/each}}
@@ -22,12 +20,32 @@
   </head>
   <body>
     
-    {{> header}}
-    {{> nav}}
+    
     {{#if (nonEmptyObject messages)}}
         {{> flashmessage}}
         {{/if}}
->>>>>>> Stashed changes
+    {{> header}}
+    {{> nav}}
     {{{body}}}
+    {{> footer}}
+    
   </body>
+  
+  {{#if isLoggedIn}}
+  <script>
+    document.getElementById('logout-button')
+      .addEventListener('click', function(ev){
+        fetch('/users/logout', {method:"POST"})
+          .then(response=> response.json())
+          .then(function(res_json){
+            console.log(res_json);
+            window.location.replace('/');
+
+          })
+          .catch(err=>console.log(err));
+      })
+      </script>
+      {{/if}}
+      
+      
 </html>

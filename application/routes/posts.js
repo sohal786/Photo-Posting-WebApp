@@ -14,15 +14,7 @@ const storage = multer.diskStorage({
       cb(null, `${file.fieldname}-${Date.now()}-${Math.round(Math.random() * 1E9)}.${fileExt}`)
     }
   })
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, '/tmp/my-uploads')
-//   },
-//   filename: function (req, file, cb) {
-//     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-//     cb(null, file.fieldname + '-' + uniqueSuffix)
-//   }
-// })
+
 
 const upload = multer({ storage: storage })
   
@@ -50,7 +42,7 @@ router.post("/create", upload.single("uploadImage"), function(req, res, next){
           .then(function([results, fields]){
               
               req.session.save(function(saveErr){
-                req.flash("success", "Your post has been created!");
+                req.flash("success", `Your post has been created!`);
                   res.redirect('/');
                   
               })

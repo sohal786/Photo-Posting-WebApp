@@ -6,9 +6,14 @@ module.exports = {
             
             req.session.save(function(saveError){
                 res.redirect('/login');
-                req.flash("error", "You must be logged in to Post");
+                req.flash("error", `You must be logged in to Post`);
             })
         
         }
-    }
-}
+    },
+
+
+    
+        
+        }
+    

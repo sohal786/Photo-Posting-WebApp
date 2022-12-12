@@ -1,22 +1,28 @@
+const form = document.getElementById('regformId');
+const button = document.getElementById('reg-form-button');
+var usernameCheck = false;
+var passwordCheck = false;
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-const form = document.getElementById('form');
+  checkInputs();
+  if (usernameCheck && passwordCheck){
+  document.getElementById("regformId").submit();
+  }
+});
+
+
+
+
+
+ function checkInputs(){
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const confirm_password = document.getElementById('confirm_password');
 const checkAge = document.getElementById('checkAge');
 const checkPrivacy = document.getElementById('checkPrivacy');
 const email = document.getElementById('email');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-var usernameCheck = false;
-var passwordCheck = false;
-    checkInputs();
-    if (usernameCheck && passwordCheck){
-    document.getElementById("regformId").submit();
-    }
-});
 
-function checkInputs(){
     var aplhanum = (/^[a-z0-9]+$/i);
 const usernameValue = username.value.trim();
 const emailValue = email.value.trim();
@@ -79,7 +85,7 @@ var check_nums = /[0-9]/;
     setSuccessFor(password);
     passwordCheck = true;
   }
-
+return passwordCheck, usernameCheck;
 }
 
 function setErrorFor(input, message){

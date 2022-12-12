@@ -1,16 +1,14 @@
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
+const form = document.getElementById('loginformId');
 
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     
-    var usernameCheck = false;
+var usernameCheck = false;
 var passwordCheck = false;
-    checkInputs();
-    if (usernameCheck && passwordCheck){
+    
+    if (checkInputs()){
     document.getElementById("loginformId").submit();
     }
 });
@@ -18,13 +16,17 @@ var passwordCheck = false;
 
 
 function checkInputs(){
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+
     var aplhanum = /^[a-z0-9]+$/i;
 const usernameValue = username.value.trim();
 const passwordValue = password.value.trim();
 
 if (usernameValue === ''){
 
-    setErrorFor(username, "Make sure to enter the right username");
+    setErrorFor(username, "Username cannot be blank");
+    req.flash("error", `Invalid user credentials`);
     
     
     }
@@ -33,10 +35,12 @@ if (usernameValue === ''){
         ("A" > usernameValue[0] || usernameValue[0] > "Z")
       ) {
          setErrorFor(username,"Make sure to enter the right username");
+         req.flash("error", `Invalid user credentials`);
       }
     
      else if (usernameValue.length < 3 ||  !aplhanum.test(usernameValue)){
         setErrorFor(username, "Make sure to enter the right username");
+        req.flash("error", `Invalid user credentials`);
     }
     
       
@@ -54,26 +58,30 @@ if (usernameValue === ''){
       if (passwordValue.length < 8) {
         
         setErrorFor(password, "Make sure to enter the right password");
+        req.flash("error", `Invalid user credentials`);
       }
       // check at least one number
       else if (!check_nums.test(passwordValue)) {
         
         setErrorFor(password,"Make sure to enter the right password");
+        req.flash("error", `Invalid user credentials`);
       }
       // check at least one Uppercase letter
       else if (!check_uppercase.test(passwordValue)) {
         setErrorFor(password,"Make sure to enter the right password");
+        req.flash("error", `Invalid user credentials`);
       }
       // check at least one special char
       else if (!check_specialchar.test(passwordValue)) {
     
         setErrorFor(password,"Make sure to enter the right password");
+        req.flash("error", `Invalid user credentials`);
       }
       else{
         setSuccessFor(password);
         passwordCheck = true;
       }
-      // check both password fields are equal or not
+      return passwordCheck && usernameCheck;
      
     }
     

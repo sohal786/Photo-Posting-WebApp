@@ -8,4 +8,4 @@ function removeFadeOut( el, speed ) {
     }, speed);
 }
 
-removeFadeOut(document.getElementById('flash-message'), 2000);
+removeFadeOut(document.getElementById('flash-message'), 4000);

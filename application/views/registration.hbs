@@ -1,13 +1,14 @@
 
-<div class="form-container">
+<div class="wrapper-container">
 <div class="regform">
-   <div class="title"<h2>Registration</h2></div>
     <section class="Regform_border">
+      <div class="title"<h2>Registration</h2></div>
     <div class="line"><strong>Fill out the following fields to register</strong></div>
     <form action="/users/register"
         class="form"
         id ="regformId"
         method="POST"
+         type="submit"
         enctype="application/x-www-form-urlencoded">
       <div class="form-control">
 
@@ -42,7 +43,7 @@
      
      
         </br>
-        <button class="form-submit-button" type ="submit">submit</button>
+        <button id="reg-form-button"class="form-submit-button" type ="submit">submit</button>
 
     </section>
     
@@ -52,11 +53,3 @@
 </form>
 </div>
 </div>
-{{!-- <footer class ="footer">
-
-    <p>*This website is made by Akshat Sohal*</p>
-
-
-</footer>
-</body>
-</html> --}}
