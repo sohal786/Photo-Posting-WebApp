@@ -1,0 +1,49 @@
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    {{!-- <a href="#nav-bar" class="jump-to-top-button" id="jump-to-top-button">Back to top</a> --}}
+   <button onclick="topFunction()" id="myBtn" title="Go to top">^Top^</button>
+    {{log this}}
+    <div class="wrapper-container">
+    <div class="post-container">
+        
+    
+<div class="post-info">
+    
+
+    <p class="post-title">{{currentPost.title}}</p>
+    
+    <br> </br>
+     <p class="post-description">Description: {{currentPost.description}}
+    </p>
+    <div class="image">
+    <p> <img class="img-container" src="/{{currentPost.image}}"></img> </p>
+    </div>
+<div class="post-timeStamp">
+    <h3 class="post-author">Created By: {{currentPost.username}}</currentPost></h3>
+    <h3>at: {{formatDate currentPost.createdAt}}</h3>
+    </div>
+    
+   
+    
+
+</div>
+    <div class="comment-section"><h3>comment</h3>
+    <div class="comment-box">
+        <textarea id="comment-text" class="comment-box-text"></textarea>
+        <i id="commentButton" 
+        data-postid="{{currentPost.id}}" 
+        class="fa fa-comment" 
+        ></i>
+        </div>
+    
+    <div class="comments" id="comment-list">
+        {{#each currentPost.comments}}
+        {{> comment this}}
+        {{/each}}
+           
+   
+
+    </div>
+    </div>
+</div>
+</div>
